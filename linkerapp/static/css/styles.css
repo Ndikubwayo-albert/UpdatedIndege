@@ -1,0 +1,42 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+.nav-container ul li{
+padding:1px;
+}
+
+.footer{ display: flex;
+
+    justify-content: center;
+    background-color: #eaecee ;
+    height: 450px;
+
+}
+#div-inside{
+    padding: 20px;
+    margin-left: 100px;
+}
+.subfooter{
+    display: flex;
+    height: 20px;
+    padding-left: 80px;
+    padding-top: 20px;
+    
+}
+#unmovable-section{
+    position: fixed;
+    margin-top: -200px;
+        
+}
+
+
+
+display:table;
+    width:100%;
+    background-position:center top;
+    height:350px;
+}
+
+#for-logo{
+
+}

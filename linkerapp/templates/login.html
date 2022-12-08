@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+ <center>
+    <div class="content" style="border:2px #0000000 solid; margin-top:20px; width:500px; height:300px; padding:30px; box-shadow:2px 5px 2px 5px;
+  border-radius:5px 5px 5px 5px;">
+       <h3 class="">Login</h3>
+      <form style="margin-top: 20px;">
+        <p>
+          <label for="username">Username:</label> <input type="text" name="user" placeholder="Your Username" id="username" required />
+        </p>
+        <p>
+          <label for="password">Password:&nbsp;</label> <input type="password" name="pass" placeholder="Your password" id="password" required />
+        </p>
+        <p>
+          <input type="submit" class="btn btn-primary" value="Login" style="margin:;" />
+        </p>Don't you have an account? <a href="/Createaccount">Click here</a> to create it.
+      </form>
+    </div> <br><br><br>
+  </center> 
+{% endblock %} 
+<br><br><br>
