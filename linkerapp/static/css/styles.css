@@ -9,7 +9,7 @@ padding:1px;
 
     justify-content: center;
     background-color: #eaecee ;
-    height: 450px;
+    height: 300px;
 
 }
 #div-inside{
@@ -30,13 +30,7 @@ padding:1px;
 }
 
 
-
-display:table;
-    width:100%;
-    background-position:center top;
-    height:350px;
-}
-
+/* 
 #for-logo{
 
-}
+} */

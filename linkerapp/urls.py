@@ -21,7 +21,19 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('Createaccount/', views.createaccount, name='createaccount'),
     path('Signin/', views.signin, name='signin'),
+    
     path('login/', views.login, name='login'),
+    
     path('register/', views.register, name='register'),
+    path('jobseeker register/', views.jobseekerreg, ),
+    path('employer register/', views.employerreg, ),
+    
+    path('signinas/', views.signinas, name='signinas'),
+    path('jobseekerlogin/', views.jobseekerlogin, ),
+    path('employerlogin/', views.emplogin, ),
+    
+    path('registeras/', views.registeras, name='registeras'),
+    path('Availableworkers/', views.availableworkers, ),
+    
 
     ]

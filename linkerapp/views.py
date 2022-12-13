@@ -14,7 +14,7 @@ def index(request):
     context = {
         'participant': participants
     }
-    return render(request, 'index.html', context)
+    return render(request, 'index.html', )
 
 
 def createaccount(request):
@@ -48,8 +48,35 @@ def login(request):
     context = {
         'participant': participants
     }
-    return render(request, 'login.html', context)
+    return render(request, 'login.html',)
 
 
 def register(request):
     return render(request, 'register.html')
+
+
+def signinas(request):
+    return render(request, 'signinAs.html')
+
+def jobseekerlogin(request):
+    return render(request, 'jobseekerlogin.html')
+
+def emplogin(request):
+    return render(request, 'emplogin.html')
+
+def registeras(request):
+    return render(request, 'registerAs.html')
+
+def jobseekerreg(request):
+    return render(request, 'jobseekerreg.html')
+
+def employerreg(request):
+    return render(request, 'employerreg.html')
+
+def availableworkers(request):
+    return render(request, 'Availableworkers.html')
+
+
+
+
+
