@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<center>
+    
+    <div class="container" style="border: 2px red;  height: 650px;"> <br>
+
+        <h2 style="text-align: center;">Register as a Jobseeker</h2> 
+        <hr>
+
+        <form action="" method="post">
+
+        <div style=" position: absolute; border: 2px red; width: 400px; height: 400px; text-align: left; margin-left: 200px;">
+       
+      
+        <label for="cardid"><b>Card Id </b> </label><font color="red">*</font> <br>
+        <input type="text" id="id" name="id" placeholder=" Enter Your Card id.." required> <br><br>
+
+        <label for="fname"> <b> First Name </b> </label> <font color="red">*</font> <br>
+        <input type="text" id="fname" name="firstname" placeholder=" Enter Your Firstname.." required> <br><br>
+    
+        <label for="lname"> <b> Last Name </b> </label> <font color="red">*</font> <br>
+        <input type="text" id="lname" name="lastname" placeholder=" Enter Your Lastname.."> <br><br>
+
+        <label for="Phone"> <b> Phone Number </b> </label> <br>
+        <input type="text" id="phone" name="phone" placeholder=" Enter Your Phone.." required> <br><br>
+
+        <label for="Email"> <b> Email </b> </label> <br>
+        <input type="email" name="email" placeholder=" Enter Your Email.."> <br><br>
+
+            </div>
+            <div style=" position: absolute; border-left: 2px red; width: 500px; height: 400px; text-align: left; margin-left: 650px;">
+            
+        <label for="Gender"> <b> Gender </b> </label> <br>
+        Male &nbsp;&nbsp; <input type="radio"name="sex" value="male" >
+        Female &nbsp;&nbsp; <input type="radio" name="sex" value="male"> <br><br>
+    
+        <label for="Location"> <b> Indege location </b>  </label> <br>
+        <select id="Location" name="Location">
+          <option value="">KIMISAGARA</option>
+          <option value="usa">BIRYOGO</option>
+          <option value="usa">NYABUGOGO</option>
+          <option value="usa">GISOZI</option>
+          <option value="usa">KATABARO</option>
+          <option value="usa">KINYINYA</option>
+        </select>  <br><br>
+
+        <label for="JOBTYPE"> <b> Job type </b> </label> <br>
+        <select id="JOBTYPE" name="JOBTYPE">
+          <option value="">UMUFUNDI</option>
+          <option value="canada">UMUYEDE</option>
+          <option value="usa">UMUKARANI </option>
+          <option value="usa">KUMESA IMYAMBARO</option>
+          <option value="usa">KUVOMA</option>
+        </select> <br><br>
+
+        <label for="others"> <b> Other job type </b> </b> </label> <br>
+        <input type="text" class="data" placeholder="Specicy it here"> <br><br>
+        
+        <label for="text"> <b>Date Of Birth</b> </label> <br>
+        <input type="date" class="data" placeholder=" Enter Your Date Of Birth" name="day" id="day" required> <br><br>
+      
+
+    </div> <br>
+
+    <div class="container" style=" position:absolute; width: 100%; height: 100px; margin-top: 340px;"> <br>
+    <hr>
+    <input type="submit" class="btn btn-primary" value="Register"> <br><br>
+
+    <p>You already have an account? <b> <a href="/jobseekerlogin"> Sign in</a> </b> </p>  </div>
+    
+</form>         
+</div>
+  
+</center>
+
+{% endblock %}
+
+<br><br><br>

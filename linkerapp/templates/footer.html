@@ -1,10 +1,12 @@
 {% load static %}
 
-<div class="footer" style="margin-top: 0px; height: 400px; ">
-   <div id="for-logo" style="border:2px red; width:150px; height:90px; margin-top:100px; margin-left:-100px;">
+<section id="contact-us">
+<div class="footer" style="margin-top: 0px; height: 600px; ">
+   <div id="for-logo" style="border:2px red; width:150px; height:90px; margin-top:100px; margin-left:0px;">
        <img src="{% static 'logaa.png' %}" width="150px" height="90px">
 
    </div>
+
 <div id="div-inside">
     <h5>Quick links</h5> <br>
     <a href="#">Sign in</a> <br>
@@ -14,30 +16,62 @@
     <a href="#">Register</a> <br>
 
 </div>
-<div id="div-inside">
+
+{% comment %} <div id="div-inside">
     <h5>Services</h5>
-</div>
+</div> {% endcomment %}
 <div id="div-inside">
     <h5>Social Media</h5> <br>
-    <a href="#">Twitter</a> <br>
-    <a href="#">Facebook</a> <br>
-    <a href="#">Instagram</a> <br>
+    <a href="https://www.twitter.com/Idg-Rwanda" target="_blank">Twitter</a> <br>
+    <a href="https://www.facebook.com/IdgRwanda" target="_blank">Facebook</a> <br>
+    <a href="https://www.instagram.com/Idg-Rwanda" target="_blank">Instagram</a> <br>
     <a href="#"></a> <br>
 </div>
 
-<div id="div-inside">
+<div id="div-inside" style=" border: 1px red; margin-left: 100px; ">
     <h5>Contact Us</h5> <br>
     <a>Location: Kigali/ Nyarugenge </a> <br>
-    <a>Email: edg-help@gmail.com</a> <br>
-    <a>Phone: +250780000055</a> <br>
+    <a>Email: edg-rw@gmail.com</a> <br>
+    <a>Phone: (+250)780000055</a> <br><br><br>
+
+       <div class="container" style=" padding: 0px;">
+      <form action="" method="post">
+        <label for="fname"> <b> Names </b> </label> 
+        <input type="text" name="names" placeholder="Your Name.." required> <br><br>
     
+        <label for="lname"> <b> Phone </b> </label> &nbsp;
+        <input type="text" id="phone" name="phone" placeholder="Your phone.." required> <br><br>
+
+        <label for="lname"> <b> Email </b> </label> &nbsp;&nbsp;
+        <input type="text" id="email" name="email" placeholder="Your Email.."> <br><br>
+
+    
+        <label for="country"> <b> Indege Location </b> </label>
+        <select id="country" name="country">
+          <option value="australia">KIMISAGARA</option>
+          <option value="usa">BIRYOGO</option>
+          <option value="usa">NYABUGOGO</option>
+          <option value="usa">MUHIMA</option>
+          <option value="usa">GISOZI</option>
+          
+        </select> <br><br>
+        
+        <label for="subject"> <b> Message </b></label>
+        <textarea cols="21" rows="6" placeholder="Write something.." style="height:100px"></textarea> <br><br>
+    
+        <center><input type="submit" class="btn btn-primary" value="Send"></center>
+      </form>
+    </div>
+
+
 </div>
 </div>
 
 <div class="subfooter">
-    <p style="font-weight: bolder; font-size: 16px;">&copy;&nbsp;&nbsp;2022.&nbsp;&nbsp;&nbsp; Copyright by Albert&nbsp;|&nbsp;Emmanuel&nbsp;|&nbsp;Yvonne. &nbsp;&nbsp;| All rights reserved.</p>
-
+    <p style="font-weight: bolder; font-size: 16px;">&copy; &nbsp;&nbsp;2022.&nbsp;&nbsp;&nbsp; Copyright by Albert&nbsp;|&nbsp;Emmanuel&nbsp;|&nbsp;Yvonne. &nbsp;&nbsp;| All rights reserved.</p>
 </div>
+
+</section>
 
  </body>
 </html>

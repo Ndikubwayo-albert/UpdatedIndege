@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+     <center>
+      <div class="container" style="border: 2px red; height: 600px;"> <br>
+        
+        <h2 style="text-align: center;" > Register as employer </h2> 
+        
+        <hr>
+
+        <div style=" position: absolute; border: 2px red; width: 400px; height: 400px; text-align: left; margin-left: 400px;">
+
+      <form action="" method="post">
+        <label for="fname"> <b> Username </b> </label> <font color="red">*</font> <br>
+        <input type="text" id="uname" name="username" placeholder="Your Username.." required> <br><br>
+
+        <label for="fname"> <b> Firstname </b> </label> <font color="red">*</font> <br>
+        <input type="text" id="fname" name="firstname" placeholder="Your Firstname.." required> <br><br>
+     
+        <label for="lname"> <b> Lastname </b> </label> <font color="red">*</font>  <br>
+        <input type="text" id="lname" name="lastname" placeholder="Your lastname.." required> <br><br>
+
+        <label for="phone"> <b> Phone </b> </label> <font color="red">*</font> <br>
+        <input type="text" id="phone" name="phone" placeholder=" Enter Your Phone.." required> <br><br>
+
+        <label for="mail"> <b> Email </b> </label> <br>
+        <input type="text" id="LC" name="email" placeholder=" Enter Your Email.."> <br><br>
+
+        <label for="password"> <b> Email </b> </label> <br>
+        <input type="text" id="LC" name="password" placeholder=" Enter Your Email.."> <br><br>
+         
+        <input type="submit" class="btn btn-primary" value="Register"> <br><br>
+
+        <p>You already have an account? <b> <a href="/employerlogin"> Sign in</a> </b> </p>
+
+      </form>
+
+        </div>
+    </div>
+
+  
+</center>
+
+{% endblock %}
+
+<br><br><br>

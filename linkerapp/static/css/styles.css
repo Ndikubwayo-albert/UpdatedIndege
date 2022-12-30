@@ -15,6 +15,7 @@ padding:1px;
 #div-inside{
     padding: 20px;
     margin-left: 100px;
+    border: 1px ;
 }
 .subfooter{
     display: flex;

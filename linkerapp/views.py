@@ -3,21 +3,20 @@ import datetime
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
-from .models import Category
+
 
 
 # Create your views here.
 
 def index(request):
-    participants = Category.objects.all()
-
+    
     context = {
-        'participant': participants
     }
     return render(request, 'index.html', )
 
 
 def createaccount(request):
+    
     if request.method == 'POST':
         firstname = request.POST['fname']
         lastname = request.POST['lname']
@@ -38,21 +37,13 @@ def createaccount(request):
     return render(request, 'createAccount.html')
 
 
-def signin(request):
-    return render(request, 'createAccount.html')
-
-
 def login(request):
-    participants = Category.objects.all()
+    # participants = Category.objects.all()
 
     context = {
-        'participant': participants
+        
     }
     return render(request, 'login.html',)
-
-
-def register(request):
-    return render(request, 'register.html')
 
 
 def signinas(request):
@@ -62,7 +53,7 @@ def jobseekerlogin(request):
     return render(request, 'jobseekerlogin.html')
 
 def emplogin(request):
-    return render(request, 'emplogin.html')
+    return render(request, 'employerlogin.html')
 
 def registeras(request):
     return render(request, 'registerAs.html')
@@ -71,10 +62,26 @@ def jobseekerreg(request):
     return render(request, 'jobseekerreg.html')
 
 def employerreg(request):
+    
+    if request.method == 'POST':
+        username = request.POST['username']
+        firstname = request.POST['firstname']
+        lastname = request.POST['lastname']
+        phone = request.POST['phone']
+        email = request.POST['email']
+        password = request.POST['password']
+
+        # myuser = User.objects.create_user(username, email, passw1)
+        # myuser.first_name = firstname
+        # myuser.last_name = lastname
+        
     return render(request, 'employerreg.html')
 
 def availableworkers(request):
     return render(request, 'Availableworkers.html')
+
+def about(request):
+    return render(request, 'about.html')
 
 
 

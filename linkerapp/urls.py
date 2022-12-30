@@ -20,11 +20,10 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('Createaccount/', views.createaccount, name='createaccount'),
-    path('Signin/', views.signin, name='signin'),
     
     path('login/', views.login, name='login'),
-    
-    path('register/', views.register, name='register'),
+        
+    path('registeras/', views.registeras, name='registeras'),
     path('jobseeker register/', views.jobseekerreg, ),
     path('employer register/', views.employerreg, ),
     
@@ -32,8 +31,9 @@ urlpatterns = [
     path('jobseekerlogin/', views.jobseekerlogin, ),
     path('employerlogin/', views.emplogin, ),
     
-    path('registeras/', views.registeras, name='registeras'),
     path('Availableworkers/', views.availableworkers, ),
+    
+    path('About/', views.about, ),
     
 
     ]
