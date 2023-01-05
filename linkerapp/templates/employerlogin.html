@@ -1,22 +1,198 @@
-{% extends 'base.html' %}
-{% block content %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register . IDg System</title>
+    <link rel = "icon" href="{% static 'logaa.png' %}"  type = "image/x-icon">
+
+    <script src=""></script>
+    
+        
+
+    <link rel="stylesheet" type="text/css" href=" {% static 'css/styles.css' %}">
+    <script src="https://kit.fontawesome.com/8a897e3da4.js" crossorigin="anonymous"></script>
+    
+  </head>
+  <body>
+    
+  <!-- links -->
+  <div class="container" style="border:; width:100%; height:90px; background-color: white; padding:7px; ">
+    <div>
+    <a class="navbar-brand" href="/index" style="font-size:35px; ">
+      <img src="{% static 'logaa.png' %}" width="150px" height="80px">
+    </a>
+  </div>
+<h3 style="color:#000; font-size:25px;text-align:center; margin-top:-50px; font-weight: bold;"> DAILY LABORERS SYSTEM</h3>
+  </div>
+
+  <!-- Nav links-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary"  >
+  <div class="container-fluid" style="height:80px;">
+
+    
+    <div style="margin-left:80px;" >
+      <p style="color: white; font-weight:; font-family: Comic Sans MS;">
+        A Web Platform<br> for casual workers.<br> We link you with a dedicated employer.
+      </p>
+    </div>
+
+    <div class=" nav-container collapse navbar-collapse" style="margin-left:300px;">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/index">Home</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle " href="/registeras" role="button" aria-haspopup="true" aria-expanded="false">Register</a>
+            </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/Availableworkers">Available Workers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/About"> About Us </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact-us">Help! </a>
+        </li>
+      </ul>
+
+
+
+        <a class="nav-link" href="#" style="display:flex;  margin-top: -20px;  margin-left: -20px;>
+          <div class="user" style=" ">
+            <i class="fas fa-thin fa-user" style="font-size: 30px; color:lightyellow; margin-top:20px;"></i>
+
+          <ul class="navbar-nav me-auto">  <li class="nav-item dropdown">
+          <a href="/signinas" class="nav-link dropdown-toggle active"   role="button" aria-haspopup="true" aria-expanded="false">Sign in</a>
+         
+        </li> </ul>
+
+          </div>
+        </a>
+
+    </div>
+  </div>
+</nav>
+
+
  <center>
     <div class="content" style="border:2px #0000000 solid; margin-top:20px; width:500px; height:300px; padding:30px; box-shadow:2px 5px 2px 5px;
   border-radius:5px 5px 5px 5px;">
+
        <h3 class="">Employer</h3>
-      <form style="margin-top: 20px;">
+       
+      <form method="post" action="" style="margin-top: 20px;">
+        {% csrf_token %}
         <p>
-          <label for="username">Username:</label> <input type="text" name="user" placeholder="Your Username" id="username" required />
+          <label for="username">Username:</label> 
+          <input type="text" name="user" placeholder="Your Username" id="username" required />
         </p>
         <p>
-          <label for="password">Password:&nbsp;</label> <input type="password" name="pass" placeholder="Your password" id="password" required />
+          <label for="password">Password:&nbsp;</label> 
+          <input type="password" name="password" placeholder="Your password" id="password" required />
         </p>
         <p>
-          <input type="submit" class="btn btn-primary" value="Login" style="margin:;" />
-        </p>Don't you have an account? <a href="/registeras">Click here</a> to register it.
+          <input type="submit" class="btn btn-primary" value="Login" style="margin:;" /> <br>
+
+          {% for message in messages %}
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong> {{ message }} </strong> 
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+
+        {% endfor %}
+
+        </p>Don't you have an account? <a href="/employer_register">Click here</a> to register it.
       </form>
     </div> <br><br><br>
   </center> 
   
-{% endblock %} 
+ 
 <br><br><br>
+
+
+<section id="contact-us">
+  <div class="footer" style="margin-top: 0px; height: 600px; ">
+     <div id="for-logo" style="border:2px red; width:150px; height:90px; margin-top:100px; margin-left:0px;">
+         <img src="{% static 'logaa.png' %}" width="150px" height="90px">
+  
+     </div>
+  
+  <div id="div-inside">
+      <h5>Quick links</h5> <br>
+      <a href="#">Sign in</a> <br>
+      <a href="#">Register</a> <br>
+      <a href="#">Available workers</a> <br>
+      <a href="#">About us</a> <br>
+      <a href="#">Register</a> <br>
+  </div>
+  
+  {% comment %} <div id="div-inside">
+      <h5>Services</h5>
+  </div> {% endcomment %}
+  <div id="div-inside">
+      <h5>Social Media</h5> <br>
+      <a href="https://www.twitter.com/Idg-Rwanda" target="_blank">Twitter</a> <br>
+      <a href="https://www.facebook.com/IdgRwanda" target="_blank">Facebook</a> <br>
+      <a href="https://www.instagram.com/Idg-Rwanda" target="_blank">Instagram</a> <br>
+      <a href="#"></a> <br>
+  </div>
+  
+  <div id="div-inside" style=" border: 1px red; margin-left: 100px; ">
+      <h5>Contact Us</h5> <br>
+      <a>Location: Kigali/ Nyarugenge </a> <br>
+      <a>Email: edg-rw@gmail.com</a> <br>
+      <a>Phone: (+250)780000055</a> <br><br><br>
+  
+         <div class="container" style=" padding: 0px;">
+        <form action="" method="post">
+          <label for="fname"> <b> Names </b> </label> 
+          <input type="text" name="names" placeholder="Your Name.." required> <br><br>
+      
+          <label for="lname"> <b> Phone </b> </label> &nbsp;
+          <input type="text" id="phone" name="phone" placeholder="Your phone.." required> <br><br>
+  
+          <label for="lname"> <b> Email </b> </label> &nbsp;&nbsp;
+          <input type="text" id="email" name="email" placeholder="Your Email.."> <br><br>
+  
+      
+          <label for="country"> <b> Indege Location </b> </label>
+          <select id="country" name="country">
+            <option value="australia">KIMISAGARA</option>
+            <option value="usa">BIRYOGO</option>
+            <option value="usa">NYABUGOGO</option>
+            <option value="usa">MUHIMA</option>
+            <option value="usa">GISOZI</option>
+            
+          </select> <br><br>
+          
+          <label for="subject"> <b> Message </b></label>
+          <textarea cols="21" rows="6" placeholder="Write something.." style="height:100px"></textarea> <br><br>
+      
+          <center><input type="submit" class="btn btn-primary" value="Send"></center>
+        </form>
+      </div>
+  
+  
+  </div>
+  </div>
+  
+  <div class="subfooter">
+      <p style="font-weight: bolder; font-size: 16px;">&copy; &nbsp;&nbsp;2022.&nbsp;&nbsp;&nbsp; Copyright by Albert&nbsp;|&nbsp;Emmanuel&nbsp;|&nbsp;Yvonne. &nbsp;&nbsp;| All rights reserved.</p>
+  </div>
+  
+  </section>
+  
+  
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  
+    <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  
+   </body>
+  </html>
+
+

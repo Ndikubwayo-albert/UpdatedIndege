@@ -19,21 +19,30 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('Createaccount/', views.createaccount, name='createaccount'),
-    
-    path('login/', views.login, name='login'),
-        
+                
     path('registeras/', views.registeras, name='registeras'),
-    path('jobseeker register/', views.jobseekerreg, ),
-    path('employer register/', views.employerreg, ),
+    path('jobseeker_register/', views.jobseekerreg, name='jobseekerreg' ),
+    path('employer_register/', views.employerreg, name='employerreg'),
     
     path('signinas/', views.signinas, name='signinas'),
-    path('jobseekerlogin/', views.jobseekerlogin, ),
-    path('employerlogin/', views.emplogin, ),
     
+    path('agentlogin/', views.agentlogin, name='agentlogin'),
+    path('employerlogin/', views.emplogin, name='employerlogin' ),
+    
+    path('d_agent/', views.adashboard, name='d_agent' ),
+    path('d_employer/', views.edashboard, name='d_employer' ),   
+        
     path('Availableworkers/', views.availableworkers, ),
+    path('<int:cardId>/', views.insert_card, ),
+
+    
+    path('profile/', views.profile, name='profile' ),
+    
+    path('logout/', views.logoutuser, name='logout'),
     
     path('About/', views.about, ),
+    path('Contact/', views.contact, name='contact'),
+    
     
 
     ]

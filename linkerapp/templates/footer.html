@@ -31,33 +31,37 @@
 <div id="div-inside" style=" border: 1px red; margin-left: 100px; ">
     <h5>Contact Us</h5> <br>
     <a>Location: Kigali/ Nyarugenge </a> <br>
-    <a>Email: edg-rw@gmail.com</a> <br>
+    <a>Email: idg-rw@gmail.com</a> <br>
     <a>Phone: (+250)780000055</a> <br><br><br>
 
        <div class="container" style=" padding: 0px;">
       <form action="" method="post">
+        
+        {% csrf_token %}
+        
         <label for="fname"> <b> Names </b> </label> 
         <input type="text" name="names" placeholder="Your Name.." required> <br><br>
     
-        <label for="lname"> <b> Phone </b> </label> &nbsp;
-        <input type="text" id="phone" name="phone" placeholder="Your phone.." required> <br><br>
+        <label for="phone"> <b> Phone </b> </label> &nbsp;
+        <input type="text" id="phone" name="phone" maxlength="9" pattern="[0-9]{9}" placeholder="Phone(+250).."  required> <br><br>
 
-        <label for="lname"> <b> Email </b> </label> &nbsp;&nbsp;
-        <input type="text" id="email" name="email" placeholder="Your Email.."> <br><br>
+        <label for="email"> <b> Email </b> </label> &nbsp;&nbsp;
+        <input type="email" id="email" name="email" placeholder="Your Email.."> <br><br>
 
     
         <label for="country"> <b> Indege Location </b> </label>
-        <select id="country" name="country">
-          <option value="australia">KIMISAGARA</option>
-          <option value="usa">BIRYOGO</option>
-          <option value="usa">NYABUGOGO</option>
-          <option value="usa">MUHIMA</option>
-          <option value="usa">GISOZI</option>
+        <select id="country" name="location">
+            <option value="">Choose Location </option>
+            <option value="KIMISAGARA">KIMISAGARA</option>
+            <option value="BIRYOGO">BIRYOGO</option>
+            <option value="NYABUGOGO">NYABUGOGO</option>
+            <option value="GISOZI">GISOZI</option>
+            <option value="KINYINYA">KINYINYA</option>>
           
         </select> <br><br>
         
         <label for="subject"> <b> Message </b></label>
-        <textarea cols="21" rows="6" placeholder="Write something.." style="height:100px"></textarea> <br><br>
+        <textarea cols="21" rows="6" name="message" placeholder="Write something.." style="height:100px" required> </textarea> <br><br>
     
         <center><input type="submit" class="btn btn-primary" value="Send"></center>
       </form>

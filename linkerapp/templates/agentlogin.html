@@ -6,10 +6,7 @@
     <title>Register . IDg System</title>
     <link rel = "icon" href="{% static 'logaa.png' %}"  type = "image/x-icon">
 
-  <style>
-
-  </style>
-
+    <script src=""></script>
     
         
 
@@ -47,7 +44,7 @@
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle active " href="/registeras" role="button" aria-haspopup="true" aria-expanded="false">Register</a>
+          <a class="nav-link dropdown-toggle " href="/registeras" role="button" aria-haspopup="true" aria-expanded="false">Register</a>
             </li>
 
         <li class="nav-item">
@@ -61,14 +58,12 @@
         </li>
       </ul>
 
-
-
         <a class="nav-link" href="#" style="display:flex;  margin-top: -20px;  margin-left: -20px;>
           <div class="user" style=" ">
             <i class="fas fa-thin fa-user" style="font-size: 30px; color:lightyellow; margin-top:20px;"></i>
 
           <ul class="navbar-nav me-auto">  <li class="nav-item dropdown">
-          <a href="/signinas" class="nav-link dropdown-toggle"   role="button" aria-haspopup="true" aria-expanded="false">Sign in</a>
+          <a href="/signinas" class="nav-link dropdown-toggle active"   role="button" aria-haspopup="true" aria-expanded="false">Sign in</a>
          
         </li> </ul>
 
@@ -81,57 +76,37 @@
 
 
 
-     <center>
-      <div class="container" style="border: 2px red; height: 600px;"> <br>
-        
-        <h2 style="text-align: center;" > Register as employer </h2>         
-        <hr> <br>
-        
-        {% for message in messages %}
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-          <strong> {{ message }} </strong> 
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+ <center>
+    <div class="content" style="border:2px #0000000 solid; margin-top:20px; width:500px; height:300px; padding:30px; box-shadow:2px 5px 2px 5px;
+  border-radius:5px 5px 5px 5px;">
+       <h3 class="">Agent</h3>
+      <form action="" method="post" style="margin-top: 20px;" >
 
-      {% endfor %}
-               
-
-        <div style=" position: absolute; border: 2px red; width: 400px; height: 400px; text-align: left; margin-left: 400px;">
-
-      <form action="" method="post">
         {% csrf_token %}
 
-        <label for="fname"> <b> Username </b> </label> <br>
-        <input type="text" id="uname" name="username" placeholder="Username.." required> <font color="red">*</font> <br><br>
+        <p>
+          <label for="username">Username: &nbsp;&nbsp;&nbsp;&nbsp; </label> <input type="text" name="user" placeholder="Your Username.." id="username" required />
+        </p>
+        <p>
+          <label for="password">Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> <input type="password" name="pass" placeholder="Your Password.." id="password" required />
+        </p> <br>
+        <p>
+          <input type="submit" class="btn btn-primary" value="Login" style="margin:;" /> <br>
 
-        <label for="fname"> <b> Firstname </b> </label> <br>
-        <input type="text" id="fname" name="firstname" placeholder="Firstname.." pattern="[A-Za-z]+" maxlength="50" required> <font color="red">*</font> <br><br>
-      
-        <label for="lname"> <b> Lastname </b> </label>  <br>
-        <input type="text" id="lname" name="lastname" placeholder="Lastname.." pattern="[A-Za-z]+" maxlength="50" required> <font color="red">*</font> <br><br>
+          {% for message in messages %}
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong> {{ message }} </strong> 
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
 
-        <label for="phone"> <b> Phone </b> </label>  <br>
-        <input type="text" id="phone" name="phone" placeholder=" Phone(+250).." maxlength="9" pattern="[0-9]{9}" required> <font color="red">*</font> <br><br>
-
-        <label for="mail"> <b> Email </b> </label>  <br>
-        <input type="email" id="" name="email" placeholder=" Email Address.."> <br><br>
-
-        <label for="password"> <b> Password </b> </label> <br>
-        <input type="password" id="" name="password" placeholder=" Password.." maxlength="50" required> <font color="red">*</font> <br><br>
-         
-        <input type="submit" name="submit" class="btn btn-primary" value="Register"> <br><br>
-
-        <p>You already have an account? <b> <a href="/employerlogin"> Sign in</a> </b> </p>
+        {% endfor %}
 
       </form>
+    </div> <br><br><br>
+  </center> 
+ 
+<br><br><br>
 
-        </div>
-    </div>
-
-  
-</center> <br><br><br>
-
-<br><br><br> 
 
 <section id="contact-us">
   <div class="footer" style="margin-top: 0px; height: 600px; ">
@@ -149,7 +124,9 @@
       <a href="#">Register</a> <br>
   </div>
   
- 
+  {% comment %} <div id="div-inside">
+      <h5>Services</h5>
+  </div> {% endcomment %}
   <div id="div-inside">
       <h5>Social Media</h5> <br>
       <a href="https://www.twitter.com/Idg-Rwanda" target="_blank">Twitter</a> <br>
