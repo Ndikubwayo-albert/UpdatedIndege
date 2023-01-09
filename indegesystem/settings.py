@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-huf2abw8@7^d7obal&rzv!x*&3o-coiq)w$62^7kqrc6$6==nf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['172.31.49.205']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'linkerapp'
+    'linkerapp',
+    'account'
 
 ]
 
@@ -126,3 +127,12 @@ STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+# CustomUser Authentication
+AUTH_USER_MODEL = "account.CustomUser"
+AUTHENTICATION_BACKENDS = (
+    "account.backends.CustomAuthBackend",
+    "django.contrib.auth.backends.ModelBackend",
+)

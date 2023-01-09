@@ -40,7 +40,7 @@
         {% csrf_token %}
         
         <label for="fname"> <b> Names </b> </label> 
-        <input type="text" name="names" placeholder="Your Name.." required> <br><br>
+        <input type="text" name="names" placeholder="Your Name.." pattern="[A-Za-z ]+" required> <br><br>
     
         <label for="phone"> <b> Phone </b> </label> &nbsp;
         <input type="text" id="phone" name="phone" maxlength="9" pattern="[0-9]{9}" placeholder="Phone(+250).."  required> <br><br>
@@ -50,7 +50,7 @@
 
     
         <label for="country"> <b> Indege Location </b> </label>
-        <select id="country" name="location">
+        <select id="country" name="location" required>
             <option value="">Choose Location </option>
             <option value="KIMISAGARA">KIMISAGARA</option>
             <option value="BIRYOGO">BIRYOGO</option>
@@ -61,7 +61,7 @@
         </select> <br><br>
         
         <label for="subject"> <b> Message </b></label>
-        <textarea cols="21" rows="6" name="message" placeholder="Write something.." style="height:100px" required> </textarea> <br><br>
+        <textarea required cols="21" rows="6" name="message" placeholder="Write something.." style="height:100px;" > </textarea> <br><br>
     
         <center><input type="submit" class="btn btn-primary" value="Send"></center>
       </form>

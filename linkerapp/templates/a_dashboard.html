@@ -11,7 +11,7 @@
         .hello-msg{
             font-size:15px;
             color:white;
-            padding: 13px;
+            padding: 0px;
             
         }
         .hello-msg a{
@@ -124,15 +124,22 @@
 
       <h3 style="color:#ffff; font-size:25px; margin-top:0px; margin-left: 300px; font-weight: bold;">
         DAILY LABORERS SYSTEM</h3>
-     
+           
 
-      <div class="hello-msg" style="margin-left:350px;"> Hello, {{ request.user }} </div>
-      <div class="hello-msg"> <a class="nav-link " href="/logout" style="color:white;"> Logout </a> </div>
+      <div class="hello-msg" style="margin-left:350px;">
+
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="/index">Home</a>
+          </li></ul>  | &nbsp;
+        Hello, {{ request.user }} </div>
+      <div class="" style="margin-left: 0px; margin-top: 38px; text-decoration: underline;"> <a class="nav-link " href="/logout" style="color:white;"> Logout </a> </div>
   </div>
 </nav>
 
 <div style=" position:absolute; margin-left: 100px; ">
-  <h5  class=" text-primary" style="color:#000000; font-size:20px; font-weight: bold; font-family: Bell MT, Courier, monospace;">
+
+   <h5  class=" text-primary" style="color:#000000; font-size:20px; font-weight: bold; font-family: Bell MT, Courier, monospace;">
   AGENT: &nbsp;&nbsp; {}</h5>
 </div>
 
@@ -148,8 +155,8 @@
       </div>
       
       <div class="items">
-          <li> <i class="far fa-uikit" > </i> <a href="/d_employer "> Home  </a></li>
-          <li> <i class="fad fa-uikit"></i><a href="/profile"> Profile </a></li>
+          <li> <i class="far fa-uikit" > </i> <a href="/d_agent "> Home  </a></li>
+          <li> <i class="fad fa-uikit"></i><a href=""> Profile </a></li>
           
       </div>
 </section>
@@ -162,6 +169,10 @@
  <input type="text" name="search" placeholder= "Search for worker Id..." style="border-radius: 10px; width: 300px;">  
  <input  type="submit" value="Search" style=" ">
 </div>
+
+<br><br>
+
+" Use a worker card Id to search for his/her information. "  
 
 </div>
 

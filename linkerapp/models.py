@@ -1,14 +1,17 @@
 from django.db import models
 from datetime import date
+from django.utils import timezone
+
 from . import forms
+from account.models import CustomUser
 
 from django.utils.translation import gettext as _
 # Create your models here.
 
 
 class Employer(models.Model):
-    emp_id = models.AutoField( primary_key = True,)
-    username = models.CharField(max_length = 5000)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, null=True)
+    
     firstname = models.CharField(max_length = 5000)
     lastname = models.CharField(max_length = 5000)
     phone = models.CharField(max_length = 5000)
@@ -28,9 +31,9 @@ class Jobseeker(models.Model):
     gender = models.CharField(max_length = 50)
     birth_date= models.DateField(null=True)
     indege_location = models.TextField()
-    job_type = models. CharField(max_length = 5000)
+    work_type = models. CharField(max_length = 5000)
     other_job = models.TextField(null= True)
-    password = models.CharField(max_length = 30)
+    
     
     
     def __str__(self):
@@ -40,11 +43,31 @@ class Rfidcard(models.Model):
     card_id = models.IntegerField(primary_key = True, )
     # date= models.DateField( _("Date"), auto_now_add=True)
     # time= models.TimeField(_("Time"), auto_now_add=True )        
-    date = models.DateField(_("Date"), default=date.today,)
+    date_added = models.DateTimeField( default= timezone.now)
     
     
     def __str__(self):
         return str(self.card_id) + "       ---"
+    
+class Present_worker(models.Model):
+    card_id = models.IntegerField(primary_key = True, )
+           
+    names= models.CharField(max_length= 500)
+    phone = models.CharField(max_length = 50)
+    age= models.CharField( max_length=50)
+    gender = models.CharField(max_length = 50)
+            
+    work_type = models. CharField(max_length = 5000)
+    location = models.TextField() 
+    date_arrived= models.DateTimeField( default= timezone.now)  
+    
+    
+ 
+    
+    def __str__(self):
+        return self.names + "       ---"
+        
+    
     
     
 class Contact(models.Model):    
@@ -55,7 +78,7 @@ class Contact(models.Model):
     message= models.TextField()
     
     def __str__(self):
-        return self.email
+        return self.names +"          ---        "+ self.email
     
     
         

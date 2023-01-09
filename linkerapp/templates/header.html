@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home . IDg System</title>
+    <title>Home | IDg System</title>
     <link rel = "icon" href="{% static 'logaa.png' %}"  type = "image/x-icon">
 
     <script src=""></script>
@@ -26,6 +26,16 @@
 <h3 style="color:#000; font-size:25px;text-align:center; margin-top:-50px; font-weight: bold;">
    DAILY LABORERS SYSTEM </h3>
   </div>
+
+  {% for message in messages %}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert" style="position: absolute; width:300px;
+   margin-left:1000px; margin-top: -70px;">
+
+    <strong> {{ message }} </strong> 
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+{% endfor %}
 
   <!-- Nav links-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary"  >
@@ -65,10 +75,21 @@
           <div class="user" style=" ">
             <i class="fas fa-thin fa-user" style="font-size: 30px; color:lightyellow; margin-top:20px;"></i>
 
-          <ul class="navbar-nav me-auto">  <li class="nav-item dropdown">
+            {% if user.is_authenticated %}
+
+          <ul class="navbar-nav me-auto">  <li class="nav-item ">
+          <a href="/logout" class="nav-link active"   role="button" aria-haspopup="true" aria-expanded="false">
+            Logout &nbsp;({{ user }})</a>
+         
+        </li> </ul>
+
+        {% else %}
+        <ul class="navbar-nav me-auto">  <li class="nav-item dropdown">
           <a href="/signinas" class="nav-link dropdown-toggle"   role="button" aria-haspopup="true" aria-expanded="false">Sign in</a>
          
         </li> </ul>
+        
+        {% endif %}
 
           </div>
         </a>

@@ -41,7 +41,7 @@ urlpatterns = [
     path('logout/', views.logoutuser, name='logout'),
     
     path('About/', views.about, ),
-    path('Contact/', views.contact, name='contact'),
+    # path('Contact/', views.contact, name='contact'),
     
     
 
