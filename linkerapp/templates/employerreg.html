@@ -8,6 +8,21 @@
 
   <style>
 
+    .form_reg input[type="text"], .form_reg input[type="email"]{
+      width: 350px;
+      height:40px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 20px;
+    }
+    
+    .form_reg input[type="password"] {
+      width: 350px;
+      height:40px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 20px;
+    }
+
+    
   </style>
 
     
@@ -98,25 +113,25 @@
 
         <div style=" position: absolute; border: 2px red; width: 400px; height: 400px; text-align: left; margin-left: 400px;">
 
-      <form action="" method="post">
+      <form action="" method="post" class="form_reg">
         {% csrf_token %}
 
-        <label for="fname"> <b> Username </b> </label> <br>
+        <label for="fname"> <b> Username: </b> </label> <br>
         <input type="text" id="uname" name="username" placeholder="Username.." required> <font color="red">*</font> <br><br>
 
-        <label for="fname"> <b> Firstname </b> </label> <br>
+        <label for="fname"> <b> Firstname: </b> </label> <br>
         <input type="text" id="fname" name="firstname" placeholder="Firstname.." pattern="[A-Za-z]+" maxlength="50" required> <font color="red">*</font> <br><br>
       
-        <label for="lname"> <b> Lastname </b> </label>  <br>
+        <label for="lname"> <b> Lastname: </b> </label>  <br>
         <input type="text" id="lname" name="lastname" placeholder="Lastname.." pattern="[A-Za-z]+" maxlength="50" required> <font color="red">*</font> <br><br>
 
-        <label for="phone"> <b> Phone </b> </label>  <br>
+        <label for="phone"> <b> Phone: </b> </label>  <br>
         <input type="text" id="phone" name="phone" placeholder=" Phone(+250).." maxlength="9" pattern="[0-9]{9}" required> <font color="red">*</font> <br><br>
 
-        <label for="mail"> <b> Email </b> </label>  <br>
+        <label for="mail"> <b> Email: </b> </label>  <br>
         <input type="email" id="" name="email" placeholder=" Email Address.."> <br><br>
 
-        <label for="password"> <b> Password </b> </label> <br>
+        <label for="password"> <b> Password: </b> </label> <br>
         <input type="password" id="" name="password" placeholder=" Password.." maxlength="50" required> <font color="red">*</font> <br><br>
          
         <input type="submit" name="submit" class="btn btn-primary" value="Register"> <br><br>
